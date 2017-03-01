@@ -1,0 +1,27 @@
+spring:
+  thymeleaf:
+    cache: true
+    content-type: text/html
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: utf-8
+    enabled: true
+
+  datasource:
+    url: ${datasource.url}
+    username: ${datasource.username}
+    password: ${datasource.password}
+    driver-class-name: com.mysql.jdbc.Driver
+  profiles:
+    active: ${activeprofile:dev}
+
+
+server:
+  port: ${http.server.port:8080}
+  display-name: "passport.tonyirl.me"
+mybatis:
+  type-aliases-package: me.tony.tonyirl.account.orm.domain
+  mapper-locations: classpath*:mappers/*Mapper.xml
+
+
+

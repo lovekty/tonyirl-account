@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="BASE_DIR">/Users/tony/code/tmp/var/logs/passport</Property>
+    </Properties>
+    <Appenders>
+        <RollingRandomAccessFile name="INFO_FILE" fileName="${BASE_DIR}/info.log"
+                                         filePattern="${BASE_DIR}/infologs/$${date:yyyy-MM}/info-%d{yyyy-MM-dd}-%i.log">
+            <LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true"/>
+            </Policies>
+        </RollingRandomAccessFile>
+    </Appenders>
+    <Appenders>
+        <RollingRandomAccessFile name="ERROR_FILE" fileName="${BASE_DIR}/error.log"
+                                         filePattern="${BASE_DIR}/errorlogs/$${date:yyyy-MM}/error-%d{yyyy-MM-dd}-%i.log">
+            <LevelRangeFilter minLevel="WARN" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true"/>
+            </Policies>
+        </RollingRandomAccessFile>
+    </Appenders>
+    <Loggers>
+        <Root level="DEBUG">
+            <AppenderRef ref="INFO_FILE"/>
+            <AppenderRef ref="ERROR_FILE"/>
+        </Root>
+    </Loggers>
+</Configuration>

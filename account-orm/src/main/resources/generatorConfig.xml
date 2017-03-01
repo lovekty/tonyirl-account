@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!-- 配置生成器 -->
+<generatorConfiguration>
+
+    <context id="mysql" targetRuntime="MyBatis3">
+
+        <!--<property name="autoDelimitKeywords" value="false"/>-->
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
+        <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="me.tony.base.orm.mybatis.generator.plugin.mysql.PagePlugin4MySQL"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin">
+            <property name="suppressJavaInterface" value="false"/>
+        </plugin>
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <!-- 必须要有的，使用这个配置链接数据库
+             配置到uc开发环境数据库
+            @TODO:是否可以扩展
+         -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="${ENV_JDBC_URL}"
+                        userId="${ENV_MYSQL_USERNAME}" password="${ENV_MYSQL_PASSWORD}"/>
+
+
+        <javaTypeResolver type="org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl">
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="me.tony.tonyirl.account.orm.domain" targetProject="src/main/java">
+            <property name="rootClass" value="me.tony.base.orm.BaseEntity"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mappers" targetProject="src/main/resources"/>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="me.tony.tonyirl.account.orm.mapper"
+                             implementationPackage="me.tony.tonyirl.account.orm.mapper.impl"
+                             targetProject="src/main/java"/>
+
+        <table tableName="e_account" domainObjectName="AccountDO">
+            <columnOverride column="account_status" javaType="me.tony.tonyirl.account.orm.enums.AccountStatusEnum"
+                            typeHandler="me.tony.tonyirl.account.orm.mybatis.typehandler.AccountStatusEnumTypeHandler"/>
+        </table>
+        <table tableName="e_account_pass" domainObjectName="AccountPasswordDO">
+            <columnOverride column="encrypt_type" javaType="me.tony.tonyirl.account.orm.enums.EncryptTypeEnum"
+                            typeHandler="me.tony.tonyirl.account.orm.mybatis.typehandler.EncryptTypeEnumTypeHandler"/>
+        </table>
+        <table tableName="r_password_history" domainObjectName="PasswordHistoryRelation">
+            <property name="rootClass" value="me.tony.base.orm.BaseRelation"/>
+            <columnOverride column="encrypt_type" javaType="me.tony.tonyirl.account.orm.enums.EncryptTypeEnum"
+                            typeHandler="me.tony.tonyirl.account.orm.mybatis.typehandler.EncryptTypeEnumTypeHandler"/>
+        </table>
+    </context>
+
+</generatorConfiguration>
