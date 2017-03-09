@@ -11,15 +11,17 @@ package me.tony.tonyirl.account.api.dto;
 public class Account implements org.apache.thrift.TBase<Account, Account._Fields>, java.io.Serializable, Cloneable, Comparable<Account> {
   private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("Account");
 
-  private static final org.apache.thrift.protocol.TField ACCOUNT_KEY_FIELD_DESC = new org.apache.thrift.protocol.TField("accountKey", org.apache.thrift.protocol.TType.STRING, (short)1);
-  private static final org.apache.thrift.protocol.TField EMAIL_FIELD_DESC = new org.apache.thrift.protocol.TField("email", org.apache.thrift.protocol.TType.STRING, (short)2);
-  private static final org.apache.thrift.protocol.TField MOBILE_FIELD_DESC = new org.apache.thrift.protocol.TField("mobile", org.apache.thrift.protocol.TType.STRING, (short)3);
-  private static final org.apache.thrift.protocol.TField NICKNAME_FIELD_DESC = new org.apache.thrift.protocol.TField("nickname", org.apache.thrift.protocol.TType.STRING, (short)4);
-  private static final org.apache.thrift.protocol.TField ACCOUNT_STATUS_FIELD_DESC = new org.apache.thrift.protocol.TField("accountStatus", org.apache.thrift.protocol.TType.I32, (short)5);
+  private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I64, (short)1);
+  private static final org.apache.thrift.protocol.TField ACCOUNT_KEY_FIELD_DESC = new org.apache.thrift.protocol.TField("accountKey", org.apache.thrift.protocol.TType.STRING, (short)2);
+  private static final org.apache.thrift.protocol.TField EMAIL_FIELD_DESC = new org.apache.thrift.protocol.TField("email", org.apache.thrift.protocol.TType.STRING, (short)3);
+  private static final org.apache.thrift.protocol.TField MOBILE_FIELD_DESC = new org.apache.thrift.protocol.TField("mobile", org.apache.thrift.protocol.TType.STRING, (short)4);
+  private static final org.apache.thrift.protocol.TField NICKNAME_FIELD_DESC = new org.apache.thrift.protocol.TField("nickname", org.apache.thrift.protocol.TType.STRING, (short)5);
+  private static final org.apache.thrift.protocol.TField ACCOUNT_STATUS_FIELD_DESC = new org.apache.thrift.protocol.TField("accountStatus", org.apache.thrift.protocol.TType.I32, (short)6);
 
   private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new AccountStandardSchemeFactory();
   private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new AccountTupleSchemeFactory();
 
+  public long id; // required
   public java.lang.String accountKey; // required
   public java.lang.String email; // required
   public java.lang.String mobile; // required
@@ -32,15 +34,16 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-    ACCOUNT_KEY((short)1, "accountKey"),
-    EMAIL((short)2, "email"),
-    MOBILE((short)3, "mobile"),
-    NICKNAME((short)4, "nickname"),
+    ID((short)1, "id"),
+    ACCOUNT_KEY((short)2, "accountKey"),
+    EMAIL((short)3, "email"),
+    MOBILE((short)4, "mobile"),
+    NICKNAME((short)5, "nickname"),
     /**
      * 
      * @see me.tony.tonyirl.account.api.enums.AccountStatus
      */
-    ACCOUNT_STATUS((short)5, "accountStatus");
+    ACCOUNT_STATUS((short)6, "accountStatus");
 
     private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
 
@@ -55,15 +58,17 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
      */
     public static _Fields findByThriftId(int fieldId) {
       switch(fieldId) {
-        case 1: // ACCOUNT_KEY
+        case 1: // ID
+          return ID;
+        case 2: // ACCOUNT_KEY
           return ACCOUNT_KEY;
-        case 2: // EMAIL
+        case 3: // EMAIL
           return EMAIL;
-        case 3: // MOBILE
+        case 4: // MOBILE
           return MOBILE;
-        case 4: // NICKNAME
+        case 5: // NICKNAME
           return NICKNAME;
-        case 5: // ACCOUNT_STATUS
+        case 6: // ACCOUNT_STATUS
           return ACCOUNT_STATUS;
         default:
           return null;
@@ -105,9 +110,13 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
   }
 
   // isset id assignments
+  private static final int __ID_ISSET_ID = 0;
+  private byte __isset_bitfield = 0;
   public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
   static {
     java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+    tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
     tmpMap.put(_Fields.ACCOUNT_KEY, new org.apache.thrift.meta_data.FieldMetaData("accountKey", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
     tmpMap.put(_Fields.EMAIL, new org.apache.thrift.meta_data.FieldMetaData("email", org.apache.thrift.TFieldRequirementType.DEFAULT, 
@@ -126,6 +135,7 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
   }
 
   public Account(
+    long id,
     java.lang.String accountKey,
     java.lang.String email,
     java.lang.String mobile,
@@ -133,6 +143,8 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
     me.tony.tonyirl.account.api.enums.AccountStatus accountStatus)
   {
     this();
+    this.id = id;
+    setIdIsSet(true);
     this.accountKey = accountKey;
     this.email = email;
     this.mobile = mobile;
@@ -144,6 +156,8 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
    * Performs a deep copy on <i>other</i>.
    */
   public Account(Account other) {
+    __isset_bitfield = other.__isset_bitfield;
+    this.id = other.id;
     if (other.isSetAccountKey()) {
       this.accountKey = other.accountKey;
     }
@@ -167,11 +181,36 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
 
   @Override
   public void clear() {
+    setIdIsSet(false);
+    this.id = 0;
     this.accountKey = null;
     this.email = null;
     this.mobile = null;
     this.nickname = null;
     this.accountStatus = null;
+  }
+
+  public long getId() {
+    return this.id;
+  }
+
+  public Account setId(long id) {
+    this.id = id;
+    setIdIsSet(true);
+    return this;
+  }
+
+  public void unsetId() {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __ID_ISSET_ID);
+  }
+
+  /** Returns true if field id is set (has been assigned a value) and false otherwise */
+  public boolean isSetId() {
+    return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __ID_ISSET_ID);
+  }
+
+  public void setIdIsSet(boolean value) {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __ID_ISSET_ID, value);
   }
 
   public java.lang.String getAccountKey() {
@@ -304,6 +343,14 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
 
   public void setFieldValue(_Fields field, java.lang.Object value) {
     switch (field) {
+    case ID:
+      if (value == null) {
+        unsetId();
+      } else {
+        setId((java.lang.Long)value);
+      }
+      break;
+
     case ACCOUNT_KEY:
       if (value == null) {
         unsetAccountKey();
@@ -349,6 +396,9 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
 
   public java.lang.Object getFieldValue(_Fields field) {
     switch (field) {
+    case ID:
+      return getId();
+
     case ACCOUNT_KEY:
       return getAccountKey();
 
@@ -375,6 +425,8 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
     }
 
     switch (field) {
+    case ID:
+      return isSetId();
     case ACCOUNT_KEY:
       return isSetAccountKey();
     case EMAIL:
@@ -403,6 +455,15 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
       return false;
     if (this == that)
       return true;
+
+    boolean this_present_id = true;
+    boolean that_present_id = true;
+    if (this_present_id || that_present_id) {
+      if (!(this_present_id && that_present_id))
+        return false;
+      if (this.id != that.id)
+        return false;
+    }
 
     boolean this_present_accountKey = true && this.isSetAccountKey();
     boolean that_present_accountKey = true && that.isSetAccountKey();
@@ -456,6 +517,8 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
   public int hashCode() {
     int hashCode = 1;
 
+    hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(id);
+
     hashCode = hashCode * 8191 + ((isSetAccountKey()) ? 131071 : 524287);
     if (isSetAccountKey())
       hashCode = hashCode * 8191 + accountKey.hashCode();
@@ -487,6 +550,16 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
 
     int lastComparison = 0;
 
+    lastComparison = java.lang.Boolean.valueOf(isSetId()).compareTo(other.isSetId());
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+    if (isSetId()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.id, other.id);
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+    }
     lastComparison = java.lang.Boolean.valueOf(isSetAccountKey()).compareTo(other.isSetAccountKey());
     if (lastComparison != 0) {
       return lastComparison;
@@ -557,6 +630,10 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
     java.lang.StringBuilder sb = new java.lang.StringBuilder("Account(");
     boolean first = true;
 
+    sb.append("id:");
+    sb.append(this.id);
+    first = false;
+    if (!first) sb.append(", ");
     sb.append("accountKey:");
     if (this.accountKey == null) {
       sb.append("null");
@@ -615,6 +692,8 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
 
   private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
     try {
+      // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
+      __isset_bitfield = 0;
       read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
     } catch (org.apache.thrift.TException te) {
       throw new java.io.IOException(te);
@@ -639,7 +718,15 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
           break;
         }
         switch (schemeField.id) {
-          case 1: // ACCOUNT_KEY
+          case 1: // ID
+            if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+              struct.id = iprot.readI64();
+              struct.setIdIsSet(true);
+            } else { 
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+            }
+            break;
+          case 2: // ACCOUNT_KEY
             if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
               struct.accountKey = iprot.readString();
               struct.setAccountKeyIsSet(true);
@@ -647,7 +734,7 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
-          case 2: // EMAIL
+          case 3: // EMAIL
             if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
               struct.email = iprot.readString();
               struct.setEmailIsSet(true);
@@ -655,7 +742,7 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
-          case 3: // MOBILE
+          case 4: // MOBILE
             if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
               struct.mobile = iprot.readString();
               struct.setMobileIsSet(true);
@@ -663,7 +750,7 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
-          case 4: // NICKNAME
+          case 5: // NICKNAME
             if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
               struct.nickname = iprot.readString();
               struct.setNicknameIsSet(true);
@@ -671,7 +758,7 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
-          case 5: // ACCOUNT_STATUS
+          case 6: // ACCOUNT_STATUS
             if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
               struct.accountStatus = me.tony.tonyirl.account.api.enums.AccountStatus.findByValue(iprot.readI32());
               struct.setAccountStatusIsSet(true);
@@ -694,6 +781,9 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
       struct.validate();
 
       oprot.writeStructBegin(STRUCT_DESC);
+      oprot.writeFieldBegin(ID_FIELD_DESC);
+      oprot.writeI64(struct.id);
+      oprot.writeFieldEnd();
       if (struct.accountKey != null) {
         oprot.writeFieldBegin(ACCOUNT_KEY_FIELD_DESC);
         oprot.writeString(struct.accountKey);
@@ -737,22 +827,28 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
     public void write(org.apache.thrift.protocol.TProtocol prot, Account struct) throws org.apache.thrift.TException {
       org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
       java.util.BitSet optionals = new java.util.BitSet();
-      if (struct.isSetAccountKey()) {
+      if (struct.isSetId()) {
         optionals.set(0);
       }
-      if (struct.isSetEmail()) {
+      if (struct.isSetAccountKey()) {
         optionals.set(1);
       }
-      if (struct.isSetMobile()) {
+      if (struct.isSetEmail()) {
         optionals.set(2);
       }
-      if (struct.isSetNickname()) {
+      if (struct.isSetMobile()) {
         optionals.set(3);
       }
-      if (struct.isSetAccountStatus()) {
+      if (struct.isSetNickname()) {
         optionals.set(4);
       }
-      oprot.writeBitSet(optionals, 5);
+      if (struct.isSetAccountStatus()) {
+        optionals.set(5);
+      }
+      oprot.writeBitSet(optionals, 6);
+      if (struct.isSetId()) {
+        oprot.writeI64(struct.id);
+      }
       if (struct.isSetAccountKey()) {
         oprot.writeString(struct.accountKey);
       }
@@ -773,24 +869,28 @@ public class Account implements org.apache.thrift.TBase<Account, Account._Fields
     @Override
     public void read(org.apache.thrift.protocol.TProtocol prot, Account struct) throws org.apache.thrift.TException {
       org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-      java.util.BitSet incoming = iprot.readBitSet(5);
+      java.util.BitSet incoming = iprot.readBitSet(6);
       if (incoming.get(0)) {
+        struct.id = iprot.readI64();
+        struct.setIdIsSet(true);
+      }
+      if (incoming.get(1)) {
         struct.accountKey = iprot.readString();
         struct.setAccountKeyIsSet(true);
       }
-      if (incoming.get(1)) {
+      if (incoming.get(2)) {
         struct.email = iprot.readString();
         struct.setEmailIsSet(true);
       }
-      if (incoming.get(2)) {
+      if (incoming.get(3)) {
         struct.mobile = iprot.readString();
         struct.setMobileIsSet(true);
       }
-      if (incoming.get(3)) {
+      if (incoming.get(4)) {
         struct.nickname = iprot.readString();
         struct.setNicknameIsSet(true);
       }
-      if (incoming.get(4)) {
+      if (incoming.get(5)) {
         struct.accountStatus = me.tony.tonyirl.account.api.enums.AccountStatus.findByValue(iprot.readI32());
         struct.setAccountStatusIsSet(true);
       }

@@ -1,6 +1,7 @@
 remote:
   service-group: tony.tonyirl.account
   service-name: account.api
+  service-port: ${remote.port:10086}
 
 mybatis:
   type-aliases-package: me.tony.tonyirl.account.orm.domain

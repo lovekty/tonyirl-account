@@ -11,12 +11,14 @@ package me.tony.tonyirl.account.api.dto;
 public class AccountPassword implements org.apache.thrift.TBase<AccountPassword, AccountPassword._Fields>, java.io.Serializable, Cloneable, Comparable<AccountPassword> {
   private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("AccountPassword");
 
-  private static final org.apache.thrift.protocol.TField ACCOUNT_PASSWORD_FIELD_DESC = new org.apache.thrift.protocol.TField("accountPassword", org.apache.thrift.protocol.TType.STRING, (short)1);
-  private static final org.apache.thrift.protocol.TField ENCRYPT_TYPE_FIELD_DESC = new org.apache.thrift.protocol.TField("encryptType", org.apache.thrift.protocol.TType.I32, (short)2);
+  private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I64, (short)1);
+  private static final org.apache.thrift.protocol.TField ACCOUNT_PASSWORD_FIELD_DESC = new org.apache.thrift.protocol.TField("accountPassword", org.apache.thrift.protocol.TType.STRING, (short)2);
+  private static final org.apache.thrift.protocol.TField ENCRYPT_TYPE_FIELD_DESC = new org.apache.thrift.protocol.TField("encryptType", org.apache.thrift.protocol.TType.I32, (short)3);
 
   private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new AccountPasswordStandardSchemeFactory();
   private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new AccountPasswordTupleSchemeFactory();
 
+  public long id; // required
   public java.lang.String accountPassword; // required
   /**
    * 
@@ -26,12 +28,13 @@ public class AccountPassword implements org.apache.thrift.TBase<AccountPassword,
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
-    ACCOUNT_PASSWORD((short)1, "accountPassword"),
+    ID((short)1, "id"),
+    ACCOUNT_PASSWORD((short)2, "accountPassword"),
     /**
      * 
      * @see me.tony.tonyirl.account.api.enums.PasswordEncryptType
      */
-    ENCRYPT_TYPE((short)2, "encryptType");
+    ENCRYPT_TYPE((short)3, "encryptType");
 
     private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
 
@@ -46,9 +49,11 @@ public class AccountPassword implements org.apache.thrift.TBase<AccountPassword,
      */
     public static _Fields findByThriftId(int fieldId) {
       switch(fieldId) {
-        case 1: // ACCOUNT_PASSWORD
+        case 1: // ID
+          return ID;
+        case 2: // ACCOUNT_PASSWORD
           return ACCOUNT_PASSWORD;
-        case 2: // ENCRYPT_TYPE
+        case 3: // ENCRYPT_TYPE
           return ENCRYPT_TYPE;
         default:
           return null;
@@ -90,9 +95,13 @@ public class AccountPassword implements org.apache.thrift.TBase<AccountPassword,
   }
 
   // isset id assignments
+  private static final int __ID_ISSET_ID = 0;
+  private byte __isset_bitfield = 0;
   public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
   static {
     java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+    tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
     tmpMap.put(_Fields.ACCOUNT_PASSWORD, new org.apache.thrift.meta_data.FieldMetaData("accountPassword", org.apache.thrift.TFieldRequirementType.DEFAULT, 
         new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
     tmpMap.put(_Fields.ENCRYPT_TYPE, new org.apache.thrift.meta_data.FieldMetaData("encryptType", org.apache.thrift.TFieldRequirementType.DEFAULT, 
@@ -105,10 +114,13 @@ public class AccountPassword implements org.apache.thrift.TBase<AccountPassword,
   }
 
   public AccountPassword(
+    long id,
     java.lang.String accountPassword,
     me.tony.tonyirl.account.api.enums.PasswordEncryptType encryptType)
   {
     this();
+    this.id = id;
+    setIdIsSet(true);
     this.accountPassword = accountPassword;
     this.encryptType = encryptType;
   }
@@ -117,6 +129,8 @@ public class AccountPassword implements org.apache.thrift.TBase<AccountPassword,
    * Performs a deep copy on <i>other</i>.
    */
   public AccountPassword(AccountPassword other) {
+    __isset_bitfield = other.__isset_bitfield;
+    this.id = other.id;
     if (other.isSetAccountPassword()) {
       this.accountPassword = other.accountPassword;
     }
@@ -131,8 +145,33 @@ public class AccountPassword implements org.apache.thrift.TBase<AccountPassword,
 
   @Override
   public void clear() {
+    setIdIsSet(false);
+    this.id = 0;
     this.accountPassword = null;
     this.encryptType = null;
+  }
+
+  public long getId() {
+    return this.id;
+  }
+
+  public AccountPassword setId(long id) {
+    this.id = id;
+    setIdIsSet(true);
+    return this;
+  }
+
+  public void unsetId() {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __ID_ISSET_ID);
+  }
+
+  /** Returns true if field id is set (has been assigned a value) and false otherwise */
+  public boolean isSetId() {
+    return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __ID_ISSET_ID);
+  }
+
+  public void setIdIsSet(boolean value) {
+    __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __ID_ISSET_ID, value);
   }
 
   public java.lang.String getAccountPassword() {
@@ -193,6 +232,14 @@ public class AccountPassword implements org.apache.thrift.TBase<AccountPassword,
 
   public void setFieldValue(_Fields field, java.lang.Object value) {
     switch (field) {
+    case ID:
+      if (value == null) {
+        unsetId();
+      } else {
+        setId((java.lang.Long)value);
+      }
+      break;
+
     case ACCOUNT_PASSWORD:
       if (value == null) {
         unsetAccountPassword();
@@ -214,6 +261,9 @@ public class AccountPassword implements org.apache.thrift.TBase<AccountPassword,
 
   public java.lang.Object getFieldValue(_Fields field) {
     switch (field) {
+    case ID:
+      return getId();
+
     case ACCOUNT_PASSWORD:
       return getAccountPassword();
 
@@ -231,6 +281,8 @@ public class AccountPassword implements org.apache.thrift.TBase<AccountPassword,
     }
 
     switch (field) {
+    case ID:
+      return isSetId();
     case ACCOUNT_PASSWORD:
       return isSetAccountPassword();
     case ENCRYPT_TYPE:
@@ -253,6 +305,15 @@ public class AccountPassword implements org.apache.thrift.TBase<AccountPassword,
       return false;
     if (this == that)
       return true;
+
+    boolean this_present_id = true;
+    boolean that_present_id = true;
+    if (this_present_id || that_present_id) {
+      if (!(this_present_id && that_present_id))
+        return false;
+      if (this.id != that.id)
+        return false;
+    }
 
     boolean this_present_accountPassword = true && this.isSetAccountPassword();
     boolean that_present_accountPassword = true && that.isSetAccountPassword();
@@ -279,6 +340,8 @@ public class AccountPassword implements org.apache.thrift.TBase<AccountPassword,
   public int hashCode() {
     int hashCode = 1;
 
+    hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(id);
+
     hashCode = hashCode * 8191 + ((isSetAccountPassword()) ? 131071 : 524287);
     if (isSetAccountPassword())
       hashCode = hashCode * 8191 + accountPassword.hashCode();
@@ -298,6 +361,16 @@ public class AccountPassword implements org.apache.thrift.TBase<AccountPassword,
 
     int lastComparison = 0;
 
+    lastComparison = java.lang.Boolean.valueOf(isSetId()).compareTo(other.isSetId());
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+    if (isSetId()) {
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.id, other.id);
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+    }
     lastComparison = java.lang.Boolean.valueOf(isSetAccountPassword()).compareTo(other.isSetAccountPassword());
     if (lastComparison != 0) {
       return lastComparison;
@@ -338,6 +411,10 @@ public class AccountPassword implements org.apache.thrift.TBase<AccountPassword,
     java.lang.StringBuilder sb = new java.lang.StringBuilder("AccountPassword(");
     boolean first = true;
 
+    sb.append("id:");
+    sb.append(this.id);
+    first = false;
+    if (!first) sb.append(", ");
     sb.append("accountPassword:");
     if (this.accountPassword == null) {
       sb.append("null");
@@ -372,6 +449,8 @@ public class AccountPassword implements org.apache.thrift.TBase<AccountPassword,
 
   private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
     try {
+      // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
+      __isset_bitfield = 0;
       read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
     } catch (org.apache.thrift.TException te) {
       throw new java.io.IOException(te);
@@ -396,7 +475,15 @@ public class AccountPassword implements org.apache.thrift.TBase<AccountPassword,
           break;
         }
         switch (schemeField.id) {
-          case 1: // ACCOUNT_PASSWORD
+          case 1: // ID
+            if (schemeField.type == org.apache.thrift.protocol.TType.I64) {
+              struct.id = iprot.readI64();
+              struct.setIdIsSet(true);
+            } else { 
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+            }
+            break;
+          case 2: // ACCOUNT_PASSWORD
             if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
               struct.accountPassword = iprot.readString();
               struct.setAccountPasswordIsSet(true);
@@ -404,7 +491,7 @@ public class AccountPassword implements org.apache.thrift.TBase<AccountPassword,
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
-          case 2: // ENCRYPT_TYPE
+          case 3: // ENCRYPT_TYPE
             if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
               struct.encryptType = me.tony.tonyirl.account.api.enums.PasswordEncryptType.findByValue(iprot.readI32());
               struct.setEncryptTypeIsSet(true);
@@ -427,6 +514,9 @@ public class AccountPassword implements org.apache.thrift.TBase<AccountPassword,
       struct.validate();
 
       oprot.writeStructBegin(STRUCT_DESC);
+      oprot.writeFieldBegin(ID_FIELD_DESC);
+      oprot.writeI64(struct.id);
+      oprot.writeFieldEnd();
       if (struct.accountPassword != null) {
         oprot.writeFieldBegin(ACCOUNT_PASSWORD_FIELD_DESC);
         oprot.writeString(struct.accountPassword);
@@ -455,13 +545,19 @@ public class AccountPassword implements org.apache.thrift.TBase<AccountPassword,
     public void write(org.apache.thrift.protocol.TProtocol prot, AccountPassword struct) throws org.apache.thrift.TException {
       org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
       java.util.BitSet optionals = new java.util.BitSet();
-      if (struct.isSetAccountPassword()) {
+      if (struct.isSetId()) {
         optionals.set(0);
       }
-      if (struct.isSetEncryptType()) {
+      if (struct.isSetAccountPassword()) {
         optionals.set(1);
       }
-      oprot.writeBitSet(optionals, 2);
+      if (struct.isSetEncryptType()) {
+        optionals.set(2);
+      }
+      oprot.writeBitSet(optionals, 3);
+      if (struct.isSetId()) {
+        oprot.writeI64(struct.id);
+      }
       if (struct.isSetAccountPassword()) {
         oprot.writeString(struct.accountPassword);
       }
@@ -473,12 +569,16 @@ public class AccountPassword implements org.apache.thrift.TBase<AccountPassword,
     @Override
     public void read(org.apache.thrift.protocol.TProtocol prot, AccountPassword struct) throws org.apache.thrift.TException {
       org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
-      java.util.BitSet incoming = iprot.readBitSet(2);
+      java.util.BitSet incoming = iprot.readBitSet(3);
       if (incoming.get(0)) {
+        struct.id = iprot.readI64();
+        struct.setIdIsSet(true);
+      }
+      if (incoming.get(1)) {
         struct.accountPassword = iprot.readString();
         struct.setAccountPasswordIsSet(true);
       }
-      if (incoming.get(1)) {
+      if (incoming.get(2)) {
         struct.encryptType = me.tony.tonyirl.account.api.enums.PasswordEncryptType.findByValue(iprot.readI32());
         struct.setEncryptTypeIsSet(true);
       }

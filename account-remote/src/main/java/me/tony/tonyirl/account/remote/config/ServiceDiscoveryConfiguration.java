@@ -12,6 +12,8 @@ public class ServiceDiscoveryConfiguration {
 
     private String serviceName;
 
+    private Integer servicePort;
+
     public String getServiceGroup() {
         return serviceGroup;
     }
@@ -26,5 +28,13 @@ public class ServiceDiscoveryConfiguration {
 
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
+    }
+
+    public Integer getServicePort() {
+        return servicePort;
+    }
+
+    public void setServicePort(Integer servicePort) {
+        this.servicePort = servicePort;
     }
 }
