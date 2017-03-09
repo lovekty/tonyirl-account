@@ -1,9 +1,10 @@
 package me.tony.tonyirl.account.orm.domain;
 
+import me.tony.tonyirl.account.base.enums.AccountStatusEnum;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import me.tony.tonyirl.account.orm.enums.AccountStatusEnum;
 
 public class AccountDOExample {
     protected String orderByClause;

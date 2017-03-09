@@ -1,9 +1,10 @@
 package me.tony.tonyirl.account.orm.domain;
 
+import me.tony.tonyirl.account.base.enums.EncryptTypeEnum;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import me.tony.tonyirl.account.orm.enums.EncryptTypeEnum;
 
 public class AccountPasswordDOExample {
     protected String orderByClause;

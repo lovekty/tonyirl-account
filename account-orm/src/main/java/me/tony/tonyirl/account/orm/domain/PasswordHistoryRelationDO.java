@@ -2,9 +2,9 @@ package me.tony.tonyirl.account.orm.domain;
 
 import java.io.Serializable;
 import me.tony.base.orm.BaseRelation;
-import me.tony.tonyirl.account.orm.enums.EncryptTypeEnum;
+import me.tony.tonyirl.account.base.enums.EncryptTypeEnum;
 
-public class PasswordHistoryRelation extends BaseRelation implements Serializable {
+public class PasswordHistoryRelationDO extends BaseRelation implements Serializable {
     private Long accountId;
 
     private String accountPassword;
@@ -48,7 +48,7 @@ public class PasswordHistoryRelation extends BaseRelation implements Serializabl
         if (getClass() != that.getClass()) {
             return false;
         }
-        PasswordHistoryRelation other = (PasswordHistoryRelation) that;
+        PasswordHistoryRelationDO other = (PasswordHistoryRelationDO) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
             && (this.getAccountId() == null ? other.getAccountId() == null : this.getAccountId().equals(other.getAccountId()))
             && (this.getAccountPassword() == null ? other.getAccountPassword() == null : this.getAccountPassword().equals(other.getAccountPassword()))

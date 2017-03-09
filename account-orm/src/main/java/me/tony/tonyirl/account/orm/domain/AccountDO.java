@@ -2,7 +2,7 @@ package me.tony.tonyirl.account.orm.domain;
 
 import java.io.Serializable;
 import me.tony.base.orm.BaseEntity;
-import me.tony.tonyirl.account.orm.enums.AccountStatusEnum;
+import me.tony.tonyirl.account.base.enums.AccountStatusEnum;
 
 public class AccountDO extends BaseEntity implements Serializable {
     private String accountKey;

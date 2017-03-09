@@ -1,11 +1,12 @@
 package me.tony.tonyirl.account.orm.domain;
 
+import me.tony.tonyirl.account.base.enums.EncryptTypeEnum;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import me.tony.tonyirl.account.orm.enums.EncryptTypeEnum;
 
-public class PasswordHistoryRelationExample {
+public class PasswordHistoryRelationDOExample {
     protected String orderByClause;
 
     protected boolean distinct;
@@ -16,7 +17,7 @@ public class PasswordHistoryRelationExample {
 
     private Integer offset;
 
-    public PasswordHistoryRelationExample() {
+    public PasswordHistoryRelationDOExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 

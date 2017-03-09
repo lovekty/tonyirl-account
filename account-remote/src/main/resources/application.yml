@@ -1,0 +1,7 @@
+remote:
+  service-group: tony.tonyirl.account
+  service-name: account.api
+
+mybatis:
+  type-aliases-package: me.tony.tonyirl.account.orm.domain
+  mapper-locations: classpath*:mappers/*Mapper.xml

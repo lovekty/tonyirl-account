@@ -23,6 +23,11 @@
             <groupId>me.tony</groupId>
             <artifactId>tony-base</artifactId>
         </dependency>
+        <dependency>
+            <groupId>me.tony.tonyirl.account</groupId>
+            <artifactId>account-base</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -36,6 +41,11 @@
                         <groupId>me.tony</groupId>
                         <artifactId>tony-base</artifactId>
                         <version>1.0-SNAPSHOT</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>me.tony.tonyirl.account</groupId>
+                        <artifactId>account-base</artifactId>
+                        <version>${project.version}</version>
                     </dependency>
                     <dependency>
                         <groupId>mysql</groupId>

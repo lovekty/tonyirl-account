@@ -2,7 +2,7 @@ package me.tony.tonyirl.account.orm.domain;
 
 import java.io.Serializable;
 import me.tony.base.orm.BaseEntity;
-import me.tony.tonyirl.account.orm.enums.EncryptTypeEnum;
+import me.tony.tonyirl.account.base.enums.EncryptTypeEnum;
 
 public class AccountPasswordDO extends BaseEntity implements Serializable {
     private String accountPassword;

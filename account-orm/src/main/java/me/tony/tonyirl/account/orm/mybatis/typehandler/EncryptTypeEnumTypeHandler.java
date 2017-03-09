@@ -1,6 +1,6 @@
 package me.tony.tonyirl.account.orm.mybatis.typehandler;
 
-import me.tony.tonyirl.account.orm.enums.EncryptTypeEnum;
+import me.tony.tonyirl.account.base.enums.EncryptTypeEnum;
 import org.apache.ibatis.type.EnumTypeHandler;
 
 /**

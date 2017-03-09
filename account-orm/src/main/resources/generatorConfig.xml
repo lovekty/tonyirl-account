@@ -49,16 +49,16 @@
                              targetProject="src/main/java"/>
 
         <table tableName="e_account" domainObjectName="AccountDO">
-            <columnOverride column="account_status" javaType="me.tony.tonyirl.account.orm.enums.AccountStatusEnum"
+            <columnOverride column="account_status" javaType="me.tony.tonyirl.account.base.enums.AccountStatusEnum"
                             typeHandler="me.tony.tonyirl.account.orm.mybatis.typehandler.AccountStatusEnumTypeHandler"/>
         </table>
         <table tableName="e_account_pass" domainObjectName="AccountPasswordDO">
-            <columnOverride column="encrypt_type" javaType="me.tony.tonyirl.account.orm.enums.EncryptTypeEnum"
+            <columnOverride column="encrypt_type" javaType="me.tony.tonyirl.account.base.enums.EncryptTypeEnum"
                             typeHandler="me.tony.tonyirl.account.orm.mybatis.typehandler.EncryptTypeEnumTypeHandler"/>
         </table>
-        <table tableName="r_password_history" domainObjectName="PasswordHistoryRelation">
+        <table tableName="r_password_history" domainObjectName="PasswordHistoryRelationDO">
             <property name="rootClass" value="me.tony.base.orm.BaseRelation"/>
-            <columnOverride column="encrypt_type" javaType="me.tony.tonyirl.account.orm.enums.EncryptTypeEnum"
+            <columnOverride column="encrypt_type" javaType="me.tony.tonyirl.account.base.enums.EncryptTypeEnum"
                             typeHandler="me.tony.tonyirl.account.orm.mybatis.typehandler.EncryptTypeEnumTypeHandler"/>
         </table>
     </context>

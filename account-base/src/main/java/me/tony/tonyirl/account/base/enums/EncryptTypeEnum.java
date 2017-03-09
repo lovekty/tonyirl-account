@@ -1,4 +1,4 @@
-package me.tony.tonyirl.account.orm.enums;
+package me.tony.tonyirl.account.base.enums;
 
 /**
  * Created by tony on 2017/2/28.
