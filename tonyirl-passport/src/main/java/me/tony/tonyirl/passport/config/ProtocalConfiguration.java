@@ -6,6 +6,7 @@ import org.apereo.cas.CipherExecutor;
 import org.apereo.cas.configuration.CasConfigurationProperties;
 import org.apereo.cas.services.web.config.CasThemesConfiguration;
 import org.apereo.cas.web.config.CasProtocolViewsConfiguration;
+import org.apereo.cas.web.config.CasSupportActionsConfiguration;
 import org.apereo.cas.web.config.CasValidationConfiguration;
 import org.apereo.cas.web.flow.CasDefaultFlowUrlHandler;
 import org.apereo.cas.web.flow.CasWebflowConfigurer;
@@ -66,7 +67,8 @@ import java.io.OutputStream;
         CasProtocolViewsConfiguration.class,
         CasThemesConfiguration.class,
         CasCoreWebflowConfiguration.class,
-        CasThrottlingConfiguration.class})
+        CasThrottlingConfiguration.class,
+        CasSupportActionsConfiguration.class})
 @ImportResource("classpath:webflow/protocal-webflow.xml")
 @EnableConfigurationProperties({CasConfigurationProperties.class})
 public class ProtocalConfiguration {
