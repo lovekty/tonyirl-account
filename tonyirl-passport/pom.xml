@@ -87,12 +87,40 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apereo.cas</groupId>
-            <artifactId>cas-server-webapp-init</artifactId>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf-spring4</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>nz.net.ultraq.thymeleaf</groupId>
+            <artifactId>thymeleaf-layout-dialect</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apereo.cas</groupId>
-            <artifactId>cas-server-webapp-config</artifactId>
+            <artifactId>cas-server-core-web</artifactId>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.apereo.cas</groupId>-->
+        <!--<artifactId>cas-server-core-webflow</artifactId>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-actions</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-themes</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-throttle</artifactId>
         </dependency>
     </dependencies>
 

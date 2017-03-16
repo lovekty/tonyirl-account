@@ -43,6 +43,11 @@
                         <version>1.0-SNAPSHOT</version>
                     </dependency>
                     <dependency>
+                        <groupId>org.mybatis.generator</groupId>
+                        <artifactId>mybatis-generator-core</artifactId>
+                        <version>1.3.5</version>
+                    </dependency>
+                    <dependency>
                         <groupId>me.tony.tonyirl.account</groupId>
                         <artifactId>account-base</artifactId>
                         <version>${project.version}</version>
