@@ -14,6 +14,7 @@
         <module>account-api</module>
         <module>account-remote</module>
         <module>account-base</module>
+        <module>tonyirl-passport</module>
     </modules>
 
     <properties>
@@ -23,6 +24,8 @@
         <mysql.driver.version>5.1.40</mysql.driver.version>
         <cas.version>5.0.2</cas.version>
         <thrift.version>0.10.0</thrift.version>
+        <thrift.plugin.version>0.1.11</thrift.plugin.version>
+        <thrift.compiler>thrift</thrift.compiler>
         <thymeleaf.version>3.0.1.RELEASE</thymeleaf.version>
         <thymeleaf-layout-dialect.version>2.0.3</thymeleaf-layout-dialect.version>
     </properties>
@@ -165,6 +168,11 @@
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <version>${springboot.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.thrift.tools</groupId>
+                    <artifactId>maven-thrift-plugin</artifactId>
+                    <version>${thrift.plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>

@@ -18,5 +18,29 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.thrift.tools</groupId>
+                <artifactId>maven-thrift-plugin</artifactId>
+                <configuration>
+                    <thriftExecutable>${thrift.compiler}</thriftExecutable>
+                    <thriftSourceRoot>src/main/thrift</thriftSourceRoot>
+                    <outputDirectory>src/main/java</outputDirectory>
+                    <generator>java</generator>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>thrift-sources</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>
