@@ -1,6 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 target
-#account-api/src/main/java
+account-api/src/main/java
 
 ### STS ###
 .apt_generated
