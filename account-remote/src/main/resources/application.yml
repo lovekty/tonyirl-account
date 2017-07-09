@@ -1,8 +1,21 @@
-remote:
-  service-group: tony.tonyirl.account
-  service-name: account.api
-  service-port: ${remote.port:10086}
+#remote:
+#  service-group: tony.tonyirl.account
+#  service-name: account.api
+#  service-port: ${remote.port:10086}
+#
+#mybatis:
+#  type-aliases-package: me.tony.tonyirl.account.orm.domain
+#  mapper-locations: classpath*:mappers/*Mapper.xml
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://59.110.47.51:6606/tonyirl_account
+    username: tony
+    password: zby4163979
+    name: tonyirlAccountDataSource
+    driver-class-name: com.mysql.jdbc.Driver
 
-mybatis:
-  type-aliases-package: me.tony.tonyirl.account.orm.domain
-  mapper-locations: classpath*:mappers/*Mapper.xml
+
+
+
+
