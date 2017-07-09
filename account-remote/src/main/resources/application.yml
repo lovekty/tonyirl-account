@@ -9,7 +9,7 @@
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://59.110.47.51:6606/tonyirl_account
+    url: jdbc:mysql://127.0.0.1:6606/tonyirl_account
     username: tony
     password: zby4163979
     name: tonyirlAccountDataSource
