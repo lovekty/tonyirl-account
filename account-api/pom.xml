@@ -26,7 +26,6 @@
                 <configuration>
                     <thriftExecutable>${thrift.compiler}</thriftExecutable>
                     <thriftSourceRoot>src/main/thrift</thriftSourceRoot>
-                    <outputDirectory>src/main/java</outputDirectory>
                     <generator>java</generator>
                 </configuration>
                 <executions>
