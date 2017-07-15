@@ -2,18 +2,20 @@ namespace java me.tony.tonyirl.account.api
 
 include 'AccountEntity.thrift'
 
+typedef AccountEntity.Account Account
+typedef AccountEntity.SessionInfo SessionInfo
+typedef AccountEntity.AuthenticationResult AuthenticationResult
+
 service AccountApi{
 
-    AccountEntity.Account getById(1:i64 id)
+    Account getById(1:i64 id)
 
-    AccountEntity.Account getByKey(1:string key)
+    Account getByKey(1:string key)
 
-    AccountEntity.Account getByEmail(1:string email)
+    Account getByEmail(1:string email)
 
-    AccountEntity.Account getByMobile(1:string mobile)
+    Account getByMobile(1:string mobile)
 
-}
+    AuthenticationResult authenticate(1:string principal, 2: binary credential)
 
-service AccountPasswordApi{
-    AccountEntity.AccountPassword getById(1:i64 id)
 }
