@@ -3,7 +3,6 @@ namespace java me.tony.tonyirl.account.api
 include 'AccountEntity.thrift'
 
 typedef AccountEntity.Account Account
-typedef AccountEntity.SessionInfo SessionInfo
 typedef AccountEntity.AuthenticationResult AuthenticationResult
 
 service AccountApi{
