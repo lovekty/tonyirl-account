@@ -30,6 +30,7 @@
         <thrift.compiler>thrift</thrift.compiler>
         <thymeleaf.version>3.0.1.RELEASE</thymeleaf.version>
         <thymeleaf-layout-dialect.version>2.0.3</thymeleaf-layout-dialect.version>
+        <tony-base.version>1.0-SNAPSHOT</tony-base.version>
     </properties>
 
     <dependencyManagement>
@@ -56,9 +57,9 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>me.tony</groupId>
-                <artifactId>tony-base</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <groupId>me.tony.base</groupId>
+                <artifactId>tony-base-common</artifactId>
+                <version>${tony-base.version}</version>
             </dependency>
             <dependency>
                 <groupId>mysql</groupId>

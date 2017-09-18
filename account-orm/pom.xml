@@ -44,8 +44,8 @@
             <artifactId>spring-tx</artifactId>
         </dependency>
         <dependency>
-            <groupId>me.tony</groupId>
-            <artifactId>tony-base</artifactId>
+            <groupId>me.tony.base</groupId>
+            <artifactId>tony-base-common</artifactId>
         </dependency>
         <dependency>
             <groupId>me.tony.tonyirl.account</groupId>
@@ -62,9 +62,9 @@
                 <version>1.3.5</version>
                 <dependencies>
                     <dependency>
-                        <groupId>me.tony</groupId>
-                        <artifactId>tony-base</artifactId>
-                        <version>1.0-SNAPSHOT</version>
+                        <groupId>me.tony.base</groupId>
+                        <artifactId>tony-base-mybatis</artifactId>
+                        <version>${tony-base.version}</version>
                     </dependency>
                     <dependency>
                         <groupId>org.mybatis.generator</groupId>
