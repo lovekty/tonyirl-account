@@ -1,5 +1,6 @@
 package me.tony.tonyirl.account.orm.config;
 
+import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -44,13 +45,13 @@ public class TonyirlAccountMyBatisAutoConfiguration implements TransactionManage
 
     @Bean(name = DATASOURCE_NAME, initMethod = "init", destroyMethod = "close")
     @Primary
-    public DataSource druidDataSource() throws Exception {
+    public DruidDataSource druidDataSource() throws Exception {
         Properties prop = new Properties();
         prop.put("driverClassName", propertyResolver.getProperty("driver-class-name"));
         prop.put("url", propertyResolver.getProperty("url"));
         prop.put("username", propertyResolver.getProperty("username"));
         prop.put("password", propertyResolver.getProperty("password"));
-        return DruidDataSourceFactory.createDataSource(prop);
+        return (DruidDataSource) DruidDataSourceFactory.createDataSource(prop);
     }
 
     @Bean(name = SQL_SESSION_FACTORY_BEAN_NAME)

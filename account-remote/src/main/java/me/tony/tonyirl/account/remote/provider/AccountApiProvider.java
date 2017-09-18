@@ -2,6 +2,7 @@ package me.tony.tonyirl.account.remote.provider;
 
 import me.tony.tonyirl.account.api.AccountApi;
 import me.tony.tonyirl.account.api.dto.Account;
+import me.tony.tonyirl.account.api.dto.AuthenticationResult;
 import me.tony.tonyirl.account.api.enums.AccountStatus;
 import me.tony.tonyirl.account.service.AccountService;
 import me.tony.tonyirl.account.service.dto.AccountDTO;
@@ -9,6 +10,7 @@ import org.apache.thrift.TException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -72,6 +74,11 @@ public class AccountApiProvider implements AccountApi.Iface {
 
     @Override
     public Account getByMobile(String mobile) throws TException {
+        return null;
+    }
+
+    @Override
+    public AuthenticationResult authenticate(String principal, String credential) throws TException {
         return null;
     }
 }

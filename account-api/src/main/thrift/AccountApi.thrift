@@ -15,6 +15,6 @@ service AccountApi{
 
     Account getByMobile(1:string mobile)
 
-    AuthenticationResult authenticate(1:string principal, 2: binary credential)
+    AuthenticationResult authenticate(1:string principal, 2: string credential)
 
 }
