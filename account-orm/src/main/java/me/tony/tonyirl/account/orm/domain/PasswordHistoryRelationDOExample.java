@@ -1,10 +1,9 @@
 package me.tony.tonyirl.account.orm.domain;
 
-import me.tony.tonyirl.account.base.enums.EncryptTypeEnum;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import me.tony.tonyirl.account.base.enums.EncryptTypeEnum;
 
 public class PasswordHistoryRelationDOExample {
     protected String orderByClause;
@@ -12,10 +11,6 @@ public class PasswordHistoryRelationDOExample {
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
-
-    private Integer limit;
-
-    private Integer offset;
 
     public PasswordHistoryRelationDOExample() {
         oredCriteria = new ArrayList<Criteria>();
@@ -70,22 +65,6 @@ public class PasswordHistoryRelationDOExample {
         distinct = false;
     }
 
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    public Integer getLimit() {
-        return this.limit;
-    }
-
-    public void setOffset(Integer offset) {
-        this.offset = offset;
-    }
-
-    public Integer getOffset() {
-        return this.offset;
-    }
-
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> encryptTypeCriteria;
 
@@ -107,7 +86,7 @@ public class PasswordHistoryRelationDOExample {
             if (value == null) {
                 throw new RuntimeException("Value for " + property + " cannot be null");
             }
-            encryptTypeCriteria.add(new Criterion(condition, value, "me.tony.tonyirl.account.orm.mybatis.typehandler.EncryptTypeEnumTypeHandler"));
+            encryptTypeCriteria.add(new Criterion(condition, value, "me.tony.tonyirl.account.orm.typehandler.EncryptTypeEnumTypeHandler"));
             allCriteria = null;
         }
 
@@ -115,7 +94,7 @@ public class PasswordHistoryRelationDOExample {
             if (value1 == null || value2 == null) {
                 throw new RuntimeException("Between values for " + property + " cannot be null");
             }
-            encryptTypeCriteria.add(new Criterion(condition, value1, value2, "me.tony.tonyirl.account.orm.mybatis.typehandler.EncryptTypeEnumTypeHandler"));
+            encryptTypeCriteria.add(new Criterion(condition, value1, value2, "me.tony.tonyirl.account.orm.typehandler.EncryptTypeEnumTypeHandler"));
             allCriteria = null;
         }
 

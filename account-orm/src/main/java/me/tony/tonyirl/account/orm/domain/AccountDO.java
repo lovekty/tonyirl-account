@@ -1,10 +1,12 @@
 package me.tony.tonyirl.account.orm.domain;
 
 import java.io.Serializable;
-import me.tony.base.orm.BaseEntity;
+import java.util.Date;
 import me.tony.tonyirl.account.base.enums.AccountStatusEnum;
 
-public class AccountDO extends BaseEntity implements Serializable {
+public class AccountDO implements Serializable {
+    private Long id;
+
     private String accountKey;
 
     private String email;
@@ -15,7 +17,21 @@ public class AccountDO extends BaseEntity implements Serializable {
 
     private AccountStatusEnum accountStatus;
 
+    private Date insertTime;
+
+    private Date updateTime;
+
+    private Boolean visible;
+
     private static final long serialVersionUID = 1L;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getAccountKey() {
         return accountKey;
@@ -55,6 +71,30 @@ public class AccountDO extends BaseEntity implements Serializable {
 
     public void setAccountStatus(AccountStatusEnum accountStatus) {
         this.accountStatus = accountStatus;
+    }
+
+    public Date getInsertTime() {
+        return insertTime;
+    }
+
+    public void setInsertTime(Date insertTime) {
+        this.insertTime = insertTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Boolean getVisible() {
+        return visible;
+    }
+
+    public void setVisible(Boolean visible) {
+        this.visible = visible;
     }
 
     @Override

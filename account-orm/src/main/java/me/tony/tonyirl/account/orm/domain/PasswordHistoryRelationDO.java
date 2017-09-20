@@ -1,17 +1,29 @@
 package me.tony.tonyirl.account.orm.domain;
 
 import java.io.Serializable;
-import me.tony.base.orm.BaseRelation;
+import java.util.Date;
 import me.tony.tonyirl.account.base.enums.EncryptTypeEnum;
 
-public class PasswordHistoryRelationDO extends BaseRelation implements Serializable {
+public class PasswordHistoryRelationDO implements Serializable {
+    private Long id;
+
     private Long accountId;
 
     private String accountPassword;
 
     private EncryptTypeEnum encryptType;
 
+    private Date insertTime;
+
     private static final long serialVersionUID = 1L;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getAccountId() {
         return accountId;
@@ -35,6 +47,14 @@ public class PasswordHistoryRelationDO extends BaseRelation implements Serializa
 
     public void setEncryptType(EncryptTypeEnum encryptType) {
         this.encryptType = encryptType;
+    }
+
+    public Date getInsertTime() {
+        return insertTime;
+    }
+
+    public void setInsertTime(Date insertTime) {
+        this.insertTime = insertTime;
     }
 
     @Override

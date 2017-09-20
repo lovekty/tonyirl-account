@@ -31,23 +31,6 @@ public class AccountDTO implements Serializable {
 
     private Boolean visible;
 
-    public static AccountDTO from(AccountDO account) {
-        if (account == null) {
-            return null;
-        }
-        AccountDTO dto = new AccountDTO();
-        dto.setId(account.getId());
-        dto.setAccountKey(account.getAccountKey());
-        dto.setEmail(account.getEmail());
-        dto.setMobile(account.getMobile());
-        dto.setNickname(account.getNickname());
-        dto.setAccountStatus(account.getAccountStatus());
-        dto.setInsertTime(account.getInsertTime());
-        dto.setUpdateTime(account.getUpdateTime());
-        dto.setVisible(account.getVisible());
-        return dto;
-    }
-
     public Long getId() {
         return id;
     }

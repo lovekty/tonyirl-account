@@ -1,4 +1,4 @@
-package me.tony.tonyirl.account.orm.mybatis.typehandler;
+package me.tony.tonyirl.account.orm.typehandler;
 
 import me.tony.tonyirl.account.base.enums.AccountStatusEnum;
 import org.apache.ibatis.type.EnumTypeHandler;

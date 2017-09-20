@@ -7,7 +7,7 @@
     <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="mobile" jdbcType="VARCHAR" property="mobile" />
     <result column="nickname" jdbcType="VARCHAR" property="nickname" />
-    <result column="account_status" jdbcType="VARCHAR" property="accountStatus" typeHandler="me.tony.tonyirl.account.orm.mybatis.typehandler.AccountStatusEnumTypeHandler" />
+    <result column="account_status" jdbcType="VARCHAR" property="accountStatus" typeHandler="me.tony.tonyirl.account.orm.typehandler.AccountStatusEnumTypeHandler" />
     <result column="insert_time" jdbcType="TIMESTAMP" property="insertTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="visible" jdbcType="BIT" property="visible" />
@@ -42,15 +42,15 @@
                   and ${criterion.condition}
                 </when>
                 <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value,typeHandler=me.tony.tonyirl.account.orm.mybatis.typehandler.AccountStatusEnumTypeHandler}
+                  and ${criterion.condition} #{criterion.value,typeHandler=me.tony.tonyirl.account.orm.typehandler.AccountStatusEnumTypeHandler}
                 </when>
                 <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value,typeHandler=me.tony.tonyirl.account.orm.mybatis.typehandler.AccountStatusEnumTypeHandler} and #{criterion.secondValue,typeHandler=me.tony.tonyirl.account.orm.mybatis.typehandler.AccountStatusEnumTypeHandler}
+                  and ${criterion.condition} #{criterion.value,typeHandler=me.tony.tonyirl.account.orm.typehandler.AccountStatusEnumTypeHandler} and #{criterion.secondValue,typeHandler=me.tony.tonyirl.account.orm.typehandler.AccountStatusEnumTypeHandler}
                 </when>
                 <when test="criterion.listValue">
                   and ${criterion.condition}
                   <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem,typeHandler=me.tony.tonyirl.account.orm.mybatis.typehandler.AccountStatusEnumTypeHandler}
+                    #{listItem,typeHandler=me.tony.tonyirl.account.orm.typehandler.AccountStatusEnumTypeHandler}
                   </foreach>
                 </when>
               </choose>
@@ -90,15 +90,15 @@
                   and ${criterion.condition}
                 </when>
                 <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value,typeHandler=me.tony.tonyirl.account.orm.mybatis.typehandler.AccountStatusEnumTypeHandler}
+                  and ${criterion.condition} #{criterion.value,typeHandler=me.tony.tonyirl.account.orm.typehandler.AccountStatusEnumTypeHandler}
                 </when>
                 <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value,typeHandler=me.tony.tonyirl.account.orm.mybatis.typehandler.AccountStatusEnumTypeHandler} and #{criterion.secondValue,typeHandler=me.tony.tonyirl.account.orm.mybatis.typehandler.AccountStatusEnumTypeHandler}
+                  and ${criterion.condition} #{criterion.value,typeHandler=me.tony.tonyirl.account.orm.typehandler.AccountStatusEnumTypeHandler} and #{criterion.secondValue,typeHandler=me.tony.tonyirl.account.orm.typehandler.AccountStatusEnumTypeHandler}
                 </when>
                 <when test="criterion.listValue">
                   and ${criterion.condition}
                   <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem,typeHandler=me.tony.tonyirl.account.orm.mybatis.typehandler.AccountStatusEnumTypeHandler}
+                    #{listItem,typeHandler=me.tony.tonyirl.account.orm.typehandler.AccountStatusEnumTypeHandler}
                   </foreach>
                 </when>
               </choose>
@@ -125,16 +125,6 @@
     <if test="orderByClause != null">
       order by ${orderByClause}
     </if>
-    <if test="limit != null and limit > 0">
-      <choose>
-        <when test="offset != null and offset > 0">
-          limit ${offset}, ${limit}
-        </when>
-        <otherwise>
-          limit ${limit}
-        </otherwise>
-      </choose>
-    </if>
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
@@ -158,7 +148,7 @@
       insert_time, update_time, visible
       )
     values (#{id,jdbcType=BIGINT}, #{accountKey,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-      #{mobile,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, #{accountStatus,jdbcType=VARCHAR,typeHandler=me.tony.tonyirl.account.orm.mybatis.typehandler.AccountStatusEnumTypeHandler}, 
+      #{mobile,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, #{accountStatus,jdbcType=VARCHAR,typeHandler=me.tony.tonyirl.account.orm.typehandler.AccountStatusEnumTypeHandler}, 
       #{insertTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{visible,jdbcType=BIT}
       )
   </insert>
@@ -210,7 +200,7 @@
         #{nickname,jdbcType=VARCHAR},
       </if>
       <if test="accountStatus != null">
-        #{accountStatus,jdbcType=VARCHAR,typeHandler=me.tony.tonyirl.account.orm.mybatis.typehandler.AccountStatusEnumTypeHandler},
+        #{accountStatus,jdbcType=VARCHAR,typeHandler=me.tony.tonyirl.account.orm.typehandler.AccountStatusEnumTypeHandler},
       </if>
       <if test="insertTime != null">
         #{insertTime,jdbcType=TIMESTAMP},
@@ -248,7 +238,7 @@
         nickname = #{record.nickname,jdbcType=VARCHAR},
       </if>
       <if test="record.accountStatus != null">
-        account_status = #{record.accountStatus,jdbcType=VARCHAR,typeHandler=me.tony.tonyirl.account.orm.mybatis.typehandler.AccountStatusEnumTypeHandler},
+        account_status = #{record.accountStatus,jdbcType=VARCHAR,typeHandler=me.tony.tonyirl.account.orm.typehandler.AccountStatusEnumTypeHandler},
       </if>
       <if test="record.insertTime != null">
         insert_time = #{record.insertTime,jdbcType=TIMESTAMP},
@@ -271,7 +261,7 @@
       email = #{record.email,jdbcType=VARCHAR},
       mobile = #{record.mobile,jdbcType=VARCHAR},
       nickname = #{record.nickname,jdbcType=VARCHAR},
-      account_status = #{record.accountStatus,jdbcType=VARCHAR,typeHandler=me.tony.tonyirl.account.orm.mybatis.typehandler.AccountStatusEnumTypeHandler},
+      account_status = #{record.accountStatus,jdbcType=VARCHAR,typeHandler=me.tony.tonyirl.account.orm.typehandler.AccountStatusEnumTypeHandler},
       insert_time = #{record.insertTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       visible = #{record.visible,jdbcType=BIT}
@@ -295,7 +285,7 @@
         nickname = #{nickname,jdbcType=VARCHAR},
       </if>
       <if test="accountStatus != null">
-        account_status = #{accountStatus,jdbcType=VARCHAR,typeHandler=me.tony.tonyirl.account.orm.mybatis.typehandler.AccountStatusEnumTypeHandler},
+        account_status = #{accountStatus,jdbcType=VARCHAR,typeHandler=me.tony.tonyirl.account.orm.typehandler.AccountStatusEnumTypeHandler},
       </if>
       <if test="insertTime != null">
         insert_time = #{insertTime,jdbcType=TIMESTAMP},
@@ -315,7 +305,7 @@
       email = #{email,jdbcType=VARCHAR},
       mobile = #{mobile,jdbcType=VARCHAR},
       nickname = #{nickname,jdbcType=VARCHAR},
-      account_status = #{accountStatus,jdbcType=VARCHAR,typeHandler=me.tony.tonyirl.account.orm.mybatis.typehandler.AccountStatusEnumTypeHandler},
+      account_status = #{accountStatus,jdbcType=VARCHAR,typeHandler=me.tony.tonyirl.account.orm.typehandler.AccountStatusEnumTypeHandler},
       insert_time = #{insertTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       visible = #{visible,jdbcType=BIT}

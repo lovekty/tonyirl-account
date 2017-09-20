@@ -14,7 +14,6 @@
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
 
-        <plugin type="me.tony.base.orm.mybatis.generator.plugin.mysql.PagePlugin4MySQL"/>
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin">
             <property name="suppressJavaInterface" value="false"/>
         </plugin>
@@ -38,9 +37,7 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="me.tony.tonyirl.account.orm.domain" targetProject="src/main/java">
-            <property name="rootClass" value="me.tony.base.orm.BaseEntity"/>
-        </javaModelGenerator>
+        <javaModelGenerator targetPackage="me.tony.tonyirl.account.orm.domain" targetProject="src/main/java"/>
 
         <sqlMapGenerator targetPackage="mappers" targetProject="src/main/resources"/>
 
@@ -50,16 +47,15 @@
 
         <table tableName="e_account" domainObjectName="AccountDO">
             <columnOverride column="account_status" javaType="me.tony.tonyirl.account.base.enums.AccountStatusEnum"
-                            typeHandler="me.tony.tonyirl.account.orm.mybatis.typehandler.AccountStatusEnumTypeHandler"/>
+                            typeHandler="me.tony.tonyirl.account.orm.typehandler.AccountStatusEnumTypeHandler"/>
         </table>
         <table tableName="e_account_pass" domainObjectName="AccountPasswordDO">
             <columnOverride column="encrypt_type" javaType="me.tony.tonyirl.account.base.enums.EncryptTypeEnum"
-                            typeHandler="me.tony.tonyirl.account.orm.mybatis.typehandler.EncryptTypeEnumTypeHandler"/>
+                            typeHandler="me.tony.tonyirl.account.orm.typehandler.EncryptTypeEnumTypeHandler"/>
         </table>
         <table tableName="r_password_history" domainObjectName="PasswordHistoryRelationDO">
-            <property name="rootClass" value="me.tony.base.orm.BaseRelation"/>
             <columnOverride column="encrypt_type" javaType="me.tony.tonyirl.account.base.enums.EncryptTypeEnum"
-                            typeHandler="me.tony.tonyirl.account.orm.mybatis.typehandler.EncryptTypeEnumTypeHandler"/>
+                            typeHandler="me.tony.tonyirl.account.orm.typehandler.EncryptTypeEnumTypeHandler"/>
         </table>
     </context>
 
