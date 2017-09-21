@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:mysql://tonyirl.me:6606/tonyirl_account
+    username: tony
+    password: zby4163979
+server:
+  port:
