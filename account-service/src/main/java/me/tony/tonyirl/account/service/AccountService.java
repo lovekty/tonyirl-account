@@ -7,4 +7,10 @@ import me.tony.tonyirl.account.service.dto.AccountDTO;
  */
 public interface AccountService {
     AccountDTO getById(Long id);
+
+    AccountDTO getByKey(String key);
+
+    AccountDTO getByEmail(String email);
+
+    AccountDTO getByMobile(String mobile);
 }

@@ -1,0 +1,42 @@
+spring:
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      druid:
+        filter:
+          stat:
+            slow-sql-millis: 500
+            log-slow-sql: true
+          slf4j:
+            enabled: true
+        url: jdbc:mysql://mysql.tony.dev:6606/tonyirl_account
+        username: tony
+        password: zby4163979
+  cloud:
+      zookeeper:
+        enabled: true
+        discovery:
+          enabled: true
+        connect-string: zk1.tony.dev:2181
+server:
+  port: 9500
+mybatis:
+  mapper-locations: classpath:mappers/*Mapper.xml
+  type-aliases-package: me.tony.tonyirl.account.orm.domain
+logging:
+  config: classpath:log4j2.xml
+
+---
+
+spring:
+  profiles: prod
+  datasource:
+    druid:
+      url: jdbc:mysql://iZ2ze47cvofre96ta9yctvZ:6606/tonyirl_account
+      username: tony
+      password: zby4163979
+  cloud:
+    zookeeper:
+      connect-string: iZ2ze47cvofre96ta9yctvZ:2611,iZ2ze47cvofre96ta9yctvZ:2612,iZ2ze47cvofre96ta9yctvZ:2613
+logging:
+  config: classpath:log4j2-prod.xml
+

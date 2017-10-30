@@ -8,19 +8,19 @@ import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.cloud.zookeeper.ZookeeperAutoConfiguration;
-import org.springframework.cloud.zookeeper.discovery.ConditionalOnZookeeperDiscoveryEnabled;
-import org.springframework.cloud.zookeeper.discovery.ZookeeperDiscoveryAutoConfiguration;
+//import org.springframework.cloud.zookeeper.ZookeeperAutoConfiguration;
+//import org.springframework.cloud.zookeeper.discovery.ConditionalOnZookeeperDiscoveryEnabled;
+//import org.springframework.cloud.zookeeper.discovery.ZookeeperDiscoveryAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
  * Created by tony on 2017/3/9.
  */
-@Configuration
-@ConditionalOnZookeeperDiscoveryEnabled
-@AutoConfigureAfter({ZookeeperDiscoveryAutoConfiguration.class, ZookeeperAutoConfiguration.class})
-@EnableConfigurationProperties(ThriftConfiguration.class)
+//@Configuration
+//@ConditionalOnZookeeperDiscoveryEnabled
+//@AutoConfigureAfter({ZookeeperDiscoveryAutoConfiguration.class, ZookeeperAutoConfiguration.class})
+//@EnableConfigurationProperties(ThriftConfiguration.class)
 public class ThriftConfiguration {
 
     private final AccountService accountService;
@@ -30,7 +30,7 @@ public class ThriftConfiguration {
         this.accountService = accountService;
     }
 
-    @Bean
+//    @Bean
     public AccountApi.Iface accountApi() {
 //        AccountApi.Iface service =
         try {
