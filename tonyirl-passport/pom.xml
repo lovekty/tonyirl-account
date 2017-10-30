@@ -13,7 +13,7 @@
     <parent>
         <groupId>me.tony.tonyirl.account</groupId>
         <artifactId>tonyirl-account</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
