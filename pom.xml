@@ -7,7 +7,7 @@
     <groupId>me.tony.tonyirl.account</groupId>
     <artifactId>tonyirl-account</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>tonyirl-account</name>
     <modules>
         <module>account-orm</module>
