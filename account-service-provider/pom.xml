@@ -64,6 +64,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <mainClass>me.tony.tonyirl.account.service.provider.ProviderApp</mainClass>
+                    <finalName>account-service-provider</finalName>
                 </configuration>
                 <executions>
                     <execution>
