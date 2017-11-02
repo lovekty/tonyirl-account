@@ -31,12 +31,12 @@ spring:
   profiles: prod
   datasource:
     druid:
-      url: jdbc:mysql://iZ2ze47cvofre96ta9yctvZ:6606/tonyirl_account
+      url: jdbc:mysql://tz-bj-1:6606/tonyirl_account
       username: tony
       password: zby4163979
   cloud:
     zookeeper:
-      connect-string: iZ2ze47cvofre96ta9yctvZ:2611,iZ2ze47cvofre96ta9yctvZ:2612,iZ2ze47cvofre96ta9yctvZ:2613
+      connect-string: tz-bj-1:2611,tz-bj-2:2611,tz-bj-2:2612
 logging:
   config: classpath:log4j2-prod.xml
 
