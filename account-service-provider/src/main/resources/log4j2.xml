@@ -21,8 +21,8 @@
 
         <!-- 同一来源的Appender可以定义多个 -->
         <RollingFile name="error"
-                     fileName="/Users/tony/code/tmp/log/tonyirl-account-service/error-logs.logs"
-                     filePattern="/Users/tony/code/tmp/log/tonyirl-account-service/error-logs-%d{yyyy-MM-dd}.log">
+                     fileName="/Users/tony/code/tmp/log/tonyirl-account-service/error.log"
+                     filePattern="/Users/tony/code/tmp/log/tonyirl-account-service/error-%d{yyyy-MM-dd}.log">
             <!-- 可以通过该参数来设置获取日志的权限 -->
             <LevelRangeFilter minLevel="warn" maxLevel="error" onMatch="ACCEPT" onMismatch="DENY"/>
             <PatternLayout patten="%d{yyyy-MM-dd 'at' HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>
