@@ -41,6 +41,10 @@
             <artifactId>account-service-model</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-webapp-init</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -49,8 +53,8 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>me.tony.tonyirl.account.service.provider.ProviderApp</mainClass>
-                    <finalName>account-service-provider</finalName>
+                    <mainClass>me.tony.tonyirl.passport.App</mainClass>
+                    <finalName>tonyirl-passport</finalName>
                 </configuration>
                 <executions>
                     <execution>
