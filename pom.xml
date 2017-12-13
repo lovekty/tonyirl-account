@@ -15,7 +15,6 @@
         <module>account-api</module>
         <module>account-remote</module>
         <module>account-base</module>
-        <module>tonyirl-passport</module>
         <module>account-common</module>
         <module>account-service-model</module>
         <module>account-service-provider</module>
@@ -34,7 +33,7 @@
         <alibaba-druid.version>1.1.4</alibaba-druid.version>
         <cas.version>5.1.5</cas.version>
         <thrift.version>0.10.0</thrift.version>
-        <thrift.compiler>thrift</thrift.compiler>
+        <thrift.compiler>/usr/local/opt/thrift0.10.0/bin/thrift</thrift.compiler>
         <thymeleaf.version>3.0.1.RELEASE</thymeleaf.version>
         <thymeleaf-layout-dialect.version>2.0.3</thymeleaf-layout-dialect.version>
     </properties>
