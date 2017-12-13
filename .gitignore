@@ -2,13 +2,10 @@
 *.class
 *.jar
 *.war
-
 ##maven
 target
-
 ##intellij
 .idea
 *.iml
-
 ##macos
 .DS_Store
