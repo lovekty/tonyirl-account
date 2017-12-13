@@ -12,8 +12,8 @@
     <modules>
         <module>account-orm</module>
         <module>account-service</module>
-        <module>account-api</module>
-        <module>account-remote</module>
+        <!--<module>account-api</module>-->
+        <!--<module>account-remote</module>-->
         <module>account-base</module>
         <module>account-common</module>
         <module>account-service-model</module>
