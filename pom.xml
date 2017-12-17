@@ -231,7 +231,9 @@
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <configuration>
-                    <delimiters>@</delimiters>
+                    <delimiters>
+                        <delimiter>@</delimiter>
+                    </delimiters>
                 </configuration>
             </plugin>
             <plugin>
