@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:mysql://tonyirl1.dev:6606/tonyirl_account?useSSL=false
+    username: tony
+    password: zby4163979
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    generate-ddl: false
+    open-in-view: true
+  data:
+    jpa:
+      repositories:
+        enabled: true

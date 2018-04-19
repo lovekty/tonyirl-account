@@ -8,7 +8,7 @@ spring:
             log-slow-sql: true
           slf4j:
             enabled: true
-        url: jdbc:mysql://mysql.tony.dev:6606/tonyirl_account
+        url: jdbc:mysql://tonyirl1.dev:6606/tonyirl_account?useSSL=false
         username: tony
         password: zby4163979
   cloud:
@@ -17,6 +17,10 @@ spring:
         discovery:
           enabled: true
         connect-string: zk1.tony.dev:2181
+  jpa:
+      hibernate:
+        ddl-auto: none
+      show-sql: true
 server:
   port: 9500
 mybatis:

@@ -145,7 +145,7 @@
   <insert id="insert" parameterType="me.tony.tonyirl.account.orm.domain.AccountDO">
     insert into e_account (id, account_key, email, 
       mobile, nickname, account_status, 
-      insert_time, update_time, visible
+      insert_time, update_time, is_visible
       )
     values (#{id,jdbcType=BIGINT}, #{accountKey,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
       #{mobile,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, #{accountStatus,jdbcType=VARCHAR,typeHandler=me.tony.tonyirl.account.orm.typehandler.AccountStatusEnumTypeHandler}, 
@@ -264,7 +264,7 @@
       account_status = #{record.accountStatus,jdbcType=VARCHAR,typeHandler=me.tony.tonyirl.account.orm.typehandler.AccountStatusEnumTypeHandler},
       insert_time = #{record.insertTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-      visible = #{record.visible,jdbcType=BIT}
+      is_visible = #{record.visible,jdbcType=BIT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -308,7 +308,7 @@
       account_status = #{accountStatus,jdbcType=VARCHAR,typeHandler=me.tony.tonyirl.account.orm.typehandler.AccountStatusEnumTypeHandler},
       insert_time = #{insertTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
-      visible = #{visible,jdbcType=BIT}
+      is_visible = #{visible,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>
