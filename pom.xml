@@ -15,16 +15,16 @@
         <version>1.0.3</version>
     </parent>
     <modules>
-<!--        <module>account-orm</module>-->
-<!--        <module>account-service</module>-->
-<!--        <module>account-api</module>-->
-<!--        <module>account-remote</module>-->
-<!--        <module>account-base</module>-->
-<!--        <module>account-common</module>-->
-<!--        <module>account-service-model</module>-->
-<!--        <module>account-service-provider</module>-->
-<!--        <module>tonyirl-passport</module>-->
-<!--        <module>account-jpa</module>-->
+        <module>account-orm</module>
+        <module>account-service</module>
+        <module>account-api</module>
+        <module>account-remote</module>
+        <module>account-base</module>
+        <module>account-common</module>
+        <module>account-service-model</module>
+        <module>account-service-provider</module>
+        <module>tonyirl-passport</module>
+        <module>account-jpa</module>
     </modules>
 
 </project>
