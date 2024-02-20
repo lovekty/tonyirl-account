@@ -1,4 +1,2 @@
-rootProject.name = "tonyirl-account"
-include("account-api")
+rootProject.name = "bootz-account-base"
 include("account-service")
-include("tonyirl-passport")

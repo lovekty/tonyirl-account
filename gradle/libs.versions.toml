@@ -1,0 +1,49 @@
+[versions]
+kotlin = "1.9.22"
+kotlinx-coroutines = "1.7.3"
+kotlinx-serialization = "1.6.2"
+springboot = "3.2.2"
+springcloud = "2023.0.0"
+jackson = "2.15.3"
+slf4j = "2.0.11"
+
+[libraries]
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+kotlin-test-base = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlin-test-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5", version.ref = "kotlin" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-serialization-protobuf = { module = "org.jetbrains.kotlinx:kotlinx-serialization-protobuf", version.ref = "kotlinx-serialization" }
+
+springboot-bom = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "springboot" }
+springboot-base = { module = "org.springframework.boot:spring-boot-starter", version.ref = "springboot" }
+springboot-validation = { module = "org.springframework.boot:spring-boot-starter-validation", version.ref = "springboot" }
+springboot-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "springboot" }
+springboot-webflux = { module = "org.springframework.boot:spring-boot-starter-webflux", version.ref = "springboot" }
+springboot-undertow = { module = "org.springframework.boot:spring-boot-starter-undertow", version.ref = "springboot" }
+springboot-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator", version.ref = "springboot" }
+springboot-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "springboot" }
+springboot-es = { module = "org.springframework.boot:spring-boot-starter-data-elasticsearch", version.ref = "springboot" }
+
+springboot-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "springboot" }
+
+springcloud-bom = { module = "org.springframework.cloud:spring-cloud-dependencies", version.ref = "springcloud" }
+
+jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson" }
+
+guava = { module = "com.google.guava:guava", version = "33.0.0-jre" }
+
+slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
+
+lombok = { module = "org.projectlombok:lombok", version = "1.18.30" }
+
+[bundles]
+springweb = ["kotlin-reflect", "springboot-web", "jackson-module-kotlin"]
+springwebflux = ["kotlin-reflect", "springboot-webflux", "jackson-module-kotlin"]
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-plugin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+kotlin-plugin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version.ref = "kotlin" }
+kotlin-plugin-allopen = { id = "org.jetbrains.kotlin.plugin.allopen", version.ref = "kotlin" }
+springboot = { id = "org.springframework.boot", version.ref = "springboot" }
+
