@@ -19,8 +19,6 @@ springboot-base = { module = "org.springframework.boot:spring-boot-starter", ver
 springboot-validation = { module = "org.springframework.boot:spring-boot-starter-validation", version.ref = "springboot" }
 springboot-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "springboot" }
 springboot-webflux = { module = "org.springframework.boot:spring-boot-starter-webflux", version.ref = "springboot" }
-springboot-undertow = { module = "org.springframework.boot:spring-boot-starter-undertow", version.ref = "springboot" }
-springboot-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator", version.ref = "springboot" }
 springboot-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "springboot" }
 springboot-es = { module = "org.springframework.boot:spring-boot-starter-data-elasticsearch", version.ref = "springboot" }
 
@@ -39,6 +37,7 @@ lombok = { module = "org.projectlombok:lombok", version = "1.18.30" }
 [bundles]
 springweb = ["kotlin-reflect", "springboot-web", "jackson-module-kotlin"]
 springwebflux = ["kotlin-reflect", "springboot-webflux", "jackson-module-kotlin"]
+springtest = ["kotlin-test-base", "kotlin-test-junit5", "springboot-test"]
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

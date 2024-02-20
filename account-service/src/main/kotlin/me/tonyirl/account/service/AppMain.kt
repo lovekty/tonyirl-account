@@ -8,11 +8,8 @@ import org.springframework.boot.runApplication
  * @date 2020/11/30
  */
 @SpringBootApplication
-class AppMain {
-    companion object {
-        @JvmStatic
-        fun main(args: Array<String>) {
-            runApplication<AppMain>(*args)
-        }
-    }
+class AppMain
+
+fun main(args: Array<String>) {
+    runApplication<AppMain>(*args)
 }

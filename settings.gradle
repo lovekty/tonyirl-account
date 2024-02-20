@@ -1,0 +1,3 @@
+rootProject.name = "bootz-account-projects"
+include "account-common"
+include "account-service"

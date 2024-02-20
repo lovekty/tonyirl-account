@@ -1,0 +1,14 @@
+plugins {
+    alias libs.plugins.kotlin.jvm
+    alias libs.plugins.kotlin.plugin.jpa
+    alias libs.plugins.kotlin.plugin.spring
+    alias libs.plugins.springboot
+}
+
+dependencies {
+    implementation project(":account-common")
+    implementation libs.bundles.springweb
+//    implementation libs.springboot.jpa
+
+    testImplementation libs.bundles.springtest
+}
