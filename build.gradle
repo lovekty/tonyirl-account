@@ -2,9 +2,7 @@ group = "cn.bootz.account"
 version = "1.0.0"
 
 allprojects {
-    tasks.withType(Test).tap {
-        configureEach {
-            useJUnitPlatform()
-        }
+    tasks.withType(Test).configureEach {
+        useJUnitPlatform()
     }
 }

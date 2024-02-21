@@ -1,4 +1,5 @@
 plugins {
+    id "groovy"
     alias libs.plugins.kotlin.jvm
     alias libs.plugins.kotlin.plugin.jpa
     alias libs.plugins.kotlin.plugin.spring
@@ -10,11 +11,18 @@ allOpen {
     annotations("jakarta.persistence.Entity", "jakarta.persistence.MappedSuperclass", "jakarta.persistence.Embeddable")
 }
 
+compileTestGroovy.dependsOn(compileKotlin)
+
 dependencies {
     implementation project(":account-api")
     implementation project(":account-common")
     implementation libs.bundles.springweb
     implementation libs.springboot.jpa
+    implementation libs.postgres.driver
 
-    testImplementation libs.bundles.springtest
+    testImplementation libs.groovy
+    testImplementation libs.bundles.spocktest
+    testRuntimeOnly libs.junit.platform.launcher
 }
+
+

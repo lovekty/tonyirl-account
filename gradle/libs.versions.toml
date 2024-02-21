@@ -2,10 +2,13 @@
 kotlin = "1.9.22"
 kotlinx-coroutines = "1.7.3"
 kotlinx-serialization = "1.6.2"
+groovy = "4.0.17"
 springboot = "3.2.2"
 springcloud = "2023.0.0"
 jackson = "2.15.3"
 slf4j = "2.0.11"
+spock = "2.3-groovy-4.0"
+junit-platform = "1.10.1"
 
 [libraries]
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
@@ -13,6 +16,9 @@ kotlin-test-base = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = 
 kotlin-test-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5", version.ref = "kotlin" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-serialization-protobuf = { module = "org.jetbrains.kotlinx:kotlinx-serialization-protobuf", version.ref = "kotlinx-serialization" }
+
+groovy = { module = 'org.apache.groovy:groovy', version.ref = 'groovy' }
+groovy-test = { module = 'org.apache.groovy:groovy-test', version.ref = 'groovy' }
 
 springboot-bom = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "springboot" }
 springboot-base = { module = "org.springframework.boot:spring-boot-starter", version.ref = "springboot" }
@@ -34,10 +40,17 @@ slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
 
 lombok = { module = "org.projectlombok:lombok", version = "1.18.30" }
 
+postgres-driver = { module = "org.postgresql:postgresql", version = "42.6.0" }
+
+spock-spring = { module = "org.spockframework:spock-spring", version.ref = "spock" }
+spock-junit4 = { module = "org.spockframework:spock-junit4", version.ref = "spock" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit-platform" }
+
 [bundles]
 springweb = ["kotlin-reflect", "springboot-web", "jackson-module-kotlin"]
 springwebflux = ["kotlin-reflect", "springboot-webflux", "jackson-module-kotlin"]
 springtest = ["kotlin-test-base", "kotlin-test-junit5", "springboot-test"]
+spocktest = ["groovy-test", "spock-spring", "spock-junit4", "springboot-test"]
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
