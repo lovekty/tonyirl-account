@@ -1,4 +1,4 @@
-package me.tonyirl.account.service.provider
+package cn.bootz.account.service.provider
 
 import cn.bootz.account.common.model.api.ApiResult
 import org.springframework.web.bind.annotation.GetMapping

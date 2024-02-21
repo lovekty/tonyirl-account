@@ -1,4 +1,4 @@
-package me.tonyirl.account.service
+package cn.bootz.account.service
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
