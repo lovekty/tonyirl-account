@@ -1,9 +1,0 @@
-spring:
-  jpa:
-    show-sql: true
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    hikari:
-      jdbc-url: jdbc:postgresql://localhost:5432/bootz_account
-      username: bootz
-      password: 123456

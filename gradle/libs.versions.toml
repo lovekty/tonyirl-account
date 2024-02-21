@@ -6,9 +6,7 @@ groovy = "4.0.17"
 springboot = "3.2.2"
 springcloud = "2023.0.0"
 jackson = "2.15.3"
-slf4j = "2.0.11"
-spock = "2.3-groovy-4.0"
-junit-platform = "1.10.1"
+spock = "2.4-M1-groovy-4.0"
 
 [libraries]
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
@@ -18,7 +16,6 @@ kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-c
 kotlinx-serialization-protobuf = { module = "org.jetbrains.kotlinx:kotlinx-serialization-protobuf", version.ref = "kotlinx-serialization" }
 
 groovy = { module = 'org.apache.groovy:groovy', version.ref = 'groovy' }
-groovy-test = { module = 'org.apache.groovy:groovy-test', version.ref = 'groovy' }
 
 springboot-bom = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "springboot" }
 springboot-base = { module = "org.springframework.boot:spring-boot-starter", version.ref = "springboot" }
@@ -34,23 +31,15 @@ springcloud-bom = { module = "org.springframework.cloud:spring-cloud-dependencie
 
 jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson" }
 
-guava = { module = "com.google.guava:guava", version = "33.0.0-jre" }
-
-slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
-
-lombok = { module = "org.projectlombok:lombok", version = "1.18.30" }
-
 postgres-driver = { module = "org.postgresql:postgresql", version = "42.6.0" }
 
 spock-spring = { module = "org.spockframework:spock-spring", version.ref = "spock" }
-spock-junit4 = { module = "org.spockframework:spock-junit4", version.ref = "spock" }
-junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit-platform" }
 
 [bundles]
 springweb = ["kotlin-reflect", "springboot-web", "jackson-module-kotlin"]
 springwebflux = ["kotlin-reflect", "springboot-webflux", "jackson-module-kotlin"]
 springtest = ["kotlin-test-base", "kotlin-test-junit5", "springboot-test"]
-spocktest = ["groovy-test", "spock-spring", "spock-junit4", "springboot-test"]
+spocktest = ["groovy", "spock-spring", "springboot-test"]
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
