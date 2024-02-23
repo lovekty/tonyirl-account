@@ -1,4 +1,4 @@
-package cn.bootz.account.domain.model
+package cn.bootz.account.domain
 
 enum class AccountState {
     INACTIVE,

@@ -18,9 +18,9 @@ class AccountBindingEmail {
     @JoinColumn(name = "id", nullable = false)
     var base: AccountBase? = null
 
-    @Column(name = "email", nullable = false, length = 128)
+    @Column(name = "email", unique = true, nullable = false, length = 128)
     var email: String? = null
 
-    @Column(name = "add_time", nullable = false)
+    @Column(name = "add_time", insertable = false, updatable = false)
     var addTime: OffsetDateTime? = null
 }

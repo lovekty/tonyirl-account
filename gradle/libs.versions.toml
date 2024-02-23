@@ -1,11 +1,11 @@
 [versions]
 kotlin = "1.9.22"
 kotlinx-coroutines = "1.7.3"
-kotlinx-serialization = "1.6.2"
-groovy = "4.0.17"
-springboot = "3.2.2"
+kotlinx-serialization = "1.6.3"
+groovy = "4.0.18"
+springboot = "3.2.3"
 springcloud = "2023.0.0"
-jackson = "2.15.3"
+jackson = "2.15.4"
 spock = "2.4-M1-groovy-4.0"
 
 [libraries]
@@ -31,7 +31,9 @@ springcloud-bom = { module = "org.springframework.cloud:spring-cloud-dependencie
 
 jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson" }
 
-postgres-driver = { module = "org.postgresql:postgresql", version = "42.6.0" }
+postgres-driver = "org.postgresql:postgresql:42.6.0"
+
+h2 = "com.h2database:h2:2.2.224"
 
 spock-spring = { module = "org.spockframework:spock-spring", version.ref = "spock" }
 
@@ -39,7 +41,7 @@ spock-spring = { module = "org.spockframework:spock-spring", version.ref = "spoc
 springweb = ["kotlin-reflect", "springboot-web", "jackson-module-kotlin"]
 springwebflux = ["kotlin-reflect", "springboot-webflux", "jackson-module-kotlin"]
 springtest = ["kotlin-test-base", "kotlin-test-junit5", "springboot-test"]
-spocktest = ["groovy", "spock-spring", "springboot-test"]
+spocktest = ["groovy", "spock-spring", "springboot-test", "h2"]
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

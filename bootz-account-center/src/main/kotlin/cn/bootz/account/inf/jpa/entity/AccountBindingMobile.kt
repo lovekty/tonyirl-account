@@ -18,9 +18,9 @@ class AccountBindingMobile {
     @JoinColumn(name = "id", nullable = false)
     var base: AccountBase? = null
 
-    @Column(name = "mobile", nullable = false, length = 32)
+    @Column(name = "mobile", unique = true, nullable = false, length = 32)
     var mobile: String? = null
 
-    @Column(name = "add_time", nullable = false)
+    @Column(name = "add_time", insertable = false, updatable = false)
     var addTime: OffsetDateTime? = null
 }

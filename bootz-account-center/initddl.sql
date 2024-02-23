@@ -16,7 +16,7 @@ create table if not exists account_base
         constraint pk_acct primary key,
     login       varchar(64)  not null
         constraint uk_acct_login unique,
-    state       smallint     not null default 1,
+    state       varchar(32)  not null,
     nickname    varchar(256) not null default '',
     avatar      varchar(512) not null default '',
     add_time    timestamptz  not null default current_timestamp,
