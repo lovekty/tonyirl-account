@@ -1,4 +1,5 @@
 rootProject.name = "bootz-account-projects"
 include "account-api"
 include "account-common"
+include "account-domain"
 include "bootz-account-center"

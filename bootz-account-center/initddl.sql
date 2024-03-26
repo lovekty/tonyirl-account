@@ -32,9 +32,9 @@ execute function renew_update_time();
 create table if not exists account_binding_mobile
 (
     id       bigint      not null
-        constraint pk_acct_m primary key,
+        constraint pk_acct_mobile primary key,
     mobile   varchar(32) not null
-        constraint uk_acct_m_mobile unique,
+        constraint uk_acct_mobile_mobile unique,
     add_time timestamptz not null default current_timestamp,
     constraint fk_acct_id foreign key (id) references account_base (id) on delete cascade
 );
@@ -42,9 +42,9 @@ create table if not exists account_binding_mobile
 create table if not exists account_binding_email
 (
     id       bigint       not null
-        constraint pk_acct_e primary key,
+        constraint pk_acct_email primary key,
     email    varchar(128) not null
-        constraint uk_acct_e_email unique,
+        constraint uk_acct_email_email unique,
     add_time timestamptz  not null default current_timestamp,
     constraint fk_acct_id foreign key (id) references account_base (id) on delete cascade
 );
@@ -52,7 +52,7 @@ create table if not exists account_binding_email
 create table if not exists account_password
 (
     id       bigint       not null
-        constraint pk_acct_p primary key,
+        constraint pk_acct_pwd primary key,
     password varchar(128) not null,
     add_time timestamptz  not null default current_timestamp,
     constraint fk_acct_id foreign key (id) references account_base (id) on delete cascade
