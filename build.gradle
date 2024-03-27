@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     alias libs.plugins.kotlin.jvm apply false
 }
@@ -8,12 +6,19 @@ group = "cn.bootz.account"
 version = "1.0.0"
 
 allprojects {
+
+    apply {
+        plugin('java')
+    }
+
     tasks.withType(Test).tap {
         configureEach {
             useJUnitPlatform()
         }
     }
-    tasks.withType(KotlinCompile).configureEach {
-    }
 
+    dependencies {
+        implementation platform(libs.springboot.bom)
+        implementation platform(libs.springcloud.bom)
+    }
 }

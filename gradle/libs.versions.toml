@@ -1,16 +1,16 @@
 [versions]
-kotlin = "1.9.22"
+kotlin = "1.9.23"
 kotlinx-coroutines = "1.7.3"
 kotlinx-serialization = "1.6.3"
-groovy = "4.0.18"
-springboot = "3.2.3"
+groovy = "4.0.20"
+springboot = "3.2.4"
 springcloud = "2023.0.0"
 jackson = "2.15.4"
-spock = "2.4-M2-groovy-4.0"
+spock = "2.4-M4-groovy-4.0"
 
 [libraries]
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
-kotlin-test-base = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-test-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5", version.ref = "kotlin" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-serialization-protobuf = { module = "org.jetbrains.kotlinx:kotlinx-serialization-protobuf", version.ref = "kotlinx-serialization" }
@@ -18,29 +18,27 @@ kotlinx-serialization-protobuf = { module = "org.jetbrains.kotlinx:kotlinx-seria
 groovy = { module = 'org.apache.groovy:groovy', version.ref = 'groovy' }
 
 springboot-bom = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "springboot" }
-springboot-base = { module = "org.springframework.boot:spring-boot-starter", version.ref = "springboot" }
-springboot-validation = { module = "org.springframework.boot:spring-boot-starter-validation", version.ref = "springboot" }
-springboot-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "springboot" }
-springboot-webflux = { module = "org.springframework.boot:spring-boot-starter-webflux", version.ref = "springboot" }
-springboot-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "springboot" }
-springboot-es = { module = "org.springframework.boot:spring-boot-starter-data-elasticsearch", version.ref = "springboot" }
+springboot-validation = { module = "org.springframework.boot:spring-boot-starter-validation" }
+springboot-web = { module = "org.springframework.boot:spring-boot-starter-web" }
+springboot-webflux = { module = "org.springframework.boot:spring-boot-starter-webflux" }
+springboot-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
 
-springboot-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "springboot" }
+springboot-test = { module = "org.springframework.boot:spring-boot-starter-test" }
 
 springcloud-bom = { module = "org.springframework.cloud:spring-cloud-dependencies", version.ref = "springcloud" }
+springcloud-zk-discovery = { module = "org.springframework.cloud:spring-cloud-starter-zookeeper-discovery" }
 
 jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson" }
 
-postgres-driver = "org.postgresql:postgresql:42.6.0"
+postgres-driver = { module = "org.postgresql:postgresql" }
 
-h2 = "com.h2database:h2:2.2.224"
+h2 = { module = "com.h2database:h2" }
 
 spock-spring = { module = "org.spockframework:spock-spring", version.ref = "spock" }
 
 [bundles]
 springweb = ["kotlin-reflect", "springboot-web", "jackson-module-kotlin"]
 springwebflux = ["kotlin-reflect", "springboot-webflux", "jackson-module-kotlin"]
-springtest = ["kotlin-test-base", "kotlin-test-junit5", "springboot-test"]
 spocktest = ["groovy", "spock-spring", "springboot-test", "h2"]
 
 [plugins]

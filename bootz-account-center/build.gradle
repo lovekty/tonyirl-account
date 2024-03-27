@@ -14,9 +14,10 @@ allOpen {
 dependencies {
     implementation project(":account-api")
     implementation project(":account-common")
-    implementation libs.bundles.springweb
+    implementation libs.bundles.springwebflux
     implementation libs.springboot.jpa
     implementation libs.postgres.driver
+    implementation libs.springcloud.zk.discovery
 
     testImplementation libs.bundles.spocktest
 }

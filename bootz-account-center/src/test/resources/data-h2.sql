@@ -1,8 +1,8 @@
 insert into account_base(id, login, state, nickname, avatar)
-values (2, 'xiaozhu', 'ACTIVATED', '', ''),
-       (3, 'xiaozhu2', 'ACTIVATED', '', ''),
-       (4, 'xiaozhu3', 'LOCKED', '', ''),
-       (5, 'xiaozhu4', 'INACTIVE', '', '');
+values (2, 'xiaozhu', 2, '', ''),
+       (3, 'xiaozhu2', 2, '', ''),
+       (4, 'xiaozhu3', 3, '', ''),
+       (5, 'xiaozhu4', 1, '', '');
 
 insert into account_binding_email(id, email)
 values (2, 'xiaozhu@page.pig'),

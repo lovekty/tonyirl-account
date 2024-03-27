@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: bootz-account-center-service
   datasource:
     driver-class-name: org.postgresql.Driver
     hikari:
@@ -10,3 +12,6 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+  cloud:
+    zookeeper:
+      connect-string: 127.0.0.1:2181

@@ -15,7 +15,6 @@ class AccountBase {
     @Column(name = "login", unique = true, nullable = false, length = 64)
     var login: String? = null
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "state", nullable = false, length = 32)
     var state: AccountState? = null
 
