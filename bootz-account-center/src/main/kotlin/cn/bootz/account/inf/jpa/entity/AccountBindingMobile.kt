@@ -1,8 +1,6 @@
 package cn.bootz.account.inf.jpa.entity
 
 import jakarta.persistence.*
-import org.hibernate.annotations.OnDelete
-import org.hibernate.annotations.OnDeleteAction
 import java.time.OffsetDateTime
 
 @Entity
@@ -13,9 +11,7 @@ class AccountBindingMobile {
     var id: Long? = null
 
     @MapsId
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "id", nullable = false)
+    @OneToOne(fetch = FetchType.LAZY)
     var base: AccountBase? = null
 
     @Column(name = "mobile", unique = true, nullable = false, length = 32)
@@ -23,4 +19,7 @@ class AccountBindingMobile {
 
     @Column(name = "add_time", insertable = false, updatable = false)
     var addTime: OffsetDateTime? = null
+
+    @Column(name = "update_time", insertable = false, updatable = false)
+    var updateTime: OffsetDateTime? = null
 }

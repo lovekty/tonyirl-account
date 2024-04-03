@@ -30,12 +30,12 @@ class AccountBase {
     @Column(name = "update_time", insertable = false, updatable = false)
     var updateTime: OffsetDateTime? = null
 
-    @OneToOne(mappedBy = "base")
+    @OneToOne(mappedBy = "base", cascade = [CascadeType.ALL])
     var email: AccountBindingEmail? = null
 
-    @OneToOne(mappedBy = "base")
+    @OneToOne(mappedBy = "base", cascade = [CascadeType.ALL])
     var mobile: AccountBindingMobile? = null
 
-    @OneToOne(mappedBy = "base")
+    @OneToOne(mappedBy = "base", cascade = [CascadeType.ALL])
     var password: AccountPassword? = null
 }

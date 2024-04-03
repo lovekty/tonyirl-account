@@ -3,6 +3,9 @@ package cn.bootz.account.test
 import cn.bootz.account.AppMain
 import cn.bootz.account.domain.AccountState
 import cn.bootz.account.inf.jpa.entity.AccountBase
+import cn.bootz.account.inf.jpa.entity.AccountBindingEmail
+import cn.bootz.account.inf.jpa.entity.AccountBindingMobile
+import cn.bootz.account.inf.jpa.entity.AccountPassword
 import cn.bootz.account.inf.jpa.repository.AccountEmailRepository
 import cn.bootz.account.inf.jpa.repository.AccountMobileRepository
 import cn.bootz.account.inf.jpa.repository.AccountPasswordRepository
@@ -12,7 +15,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 import org.springframework.dao.DataIntegrityViolationException
 import org.springframework.data.domain.Example
 import org.springframework.test.context.ContextConfiguration
-import spock.lang.Ignore
 import spock.lang.Specification
 
 @DataJpaTest
@@ -39,6 +41,20 @@ class JpaTests extends Specification {
         then:
         acct.id > 0
         acct.login == login
+        noExceptionThrown()
+    }
+
+    def "test create new account with email mobile and password"() {
+        setup:
+        def login = "peiqi"
+        when:
+        def acct = acctRepo.save(new AccountBase(login: login, state: AccountState.ACTIVATED, nickname: "${login}_nickname", avatar: "${login}_avatar",
+                email: new AccountBindingEmail(email: "peiqi@page.pig"), mobile: new AccountBindingMobile(mobile: "18612345678"), password: new AccountPassword(password: "pwd12345")))
+        then:
+        acct.id > 0
+        acct.id == acct.email.id
+        acct.id == acct.mobile.id
+        acct.id == acct.password.id
         noExceptionThrown()
     }
 
@@ -82,7 +98,6 @@ class JpaTests extends Specification {
         one.get().login == login
     }
 
-    @Ignore
     def "test delete account"() {
         setup:
         def toDel = 2L

@@ -23,7 +23,7 @@ create table if not exists account_base
     update_time timestamptz  not null default current_timestamp
 );
 
-create trigger trig_renew_account_base_update_time
+create trigger trig_renew_acct_update_time
     before update
     on account_base
     for each row
@@ -36,8 +36,14 @@ create table if not exists account_binding_mobile
     mobile   varchar(32) not null
         constraint uk_acct_mobile_mobile unique,
     add_time timestamptz not null default current_timestamp,
-    constraint fk_acct_id foreign key (id) references account_base (id) on delete cascade
+    update_time timestamptz  not null default current_timestamp
 );
+
+create trigger trig_renew_acct_mobile_update_time
+    before update
+    on account_binding_mobile
+    for each row
+execute function renew_update_time();
 
 create table if not exists account_binding_email
 (
@@ -46,8 +52,14 @@ create table if not exists account_binding_email
     email    varchar(128) not null
         constraint uk_acct_email_email unique,
     add_time timestamptz  not null default current_timestamp,
-    constraint fk_acct_id foreign key (id) references account_base (id) on delete cascade
+    update_time timestamptz  not null default current_timestamp
 );
+
+create trigger trig_renew_acct_email_update_time
+    before update
+    on account_binding_email
+    for each row
+execute function renew_update_time();
 
 create table if not exists account_password
 (
@@ -55,5 +67,11 @@ create table if not exists account_password
         constraint pk_acct_pwd primary key,
     password varchar(128) not null,
     add_time timestamptz  not null default current_timestamp,
-    constraint fk_acct_id foreign key (id) references account_base (id) on delete cascade
+    update_time timestamptz  not null default current_timestamp
 );
+
+create trigger trig_renew_account_base_update_time
+    before update
+    on account_base
+    for each row
+execute function renew_update_time();
