@@ -70,8 +70,8 @@ create table if not exists account_password
     update_time timestamptz  not null default current_timestamp
 );
 
-create trigger trig_renew_account_base_update_time
+create trigger trig_renew_acct_pwd_update_time
     before update
-    on account_base
+    on account_password
     for each row
 execute function renew_update_time();

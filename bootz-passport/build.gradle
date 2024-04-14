@@ -1,0 +1,14 @@
+plugins {
+    alias libs.plugins.kotlin.jvm
+    alias libs.plugins.kotlin.plugin.jpa
+    alias libs.plugins.kotlin.plugin.spring
+    alias libs.plugins.kotlin.plugin.allopen
+    alias libs.plugins.springboot
+    id "groovy"
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-oauth2-authorization-server"
+    implementation libs.springcloud.zk.discovery
+    testImplementation libs.bundles.spocktest
+}
